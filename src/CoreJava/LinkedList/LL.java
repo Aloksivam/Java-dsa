@@ -105,6 +105,37 @@ public class LL {
 
 
     }
+
+    public void setHead(Node head) {
+        this.head = head;
+    }
+
+//    public void InsRec(int value, int index){
+//        if(index==0){
+//            Node node = new Node(value);
+//            size+=1;
+//            node.
+//
+//        }
+//        InsRec(value,index-1);
+//
+//    }
+
+    public void Insert(int index,int value){
+        if(index>=size){
+            System.out.println("size of linked list is less");
+        }
+        head = InsertRec(index,value,head);
+    }
+    private Node InsertRec(int index, int value,Node node){
+        if(index==0){
+            Node temp = new Node(value,node);
+            size+=1;
+            return temp;
+        }
+        node.next = InsertRec(index-1,value,node.next);
+        return node;
+    }
     public void Del(int index){
         if (index == 0){
             DelFirst();
@@ -181,4 +212,18 @@ public class LL {
         }
         return null;
     }
+    public void RemDuplicate(){
+        Node temp = head;
+        while(temp.next!=null ){
+            if(temp.value == (temp.next).value) {
+                temp.next = (temp.next).next;
+            }
+            else{
+                temp = temp.next;
+            }
+        }
+        tail = temp;
+        temp.next = null;
+    }
+
 }
