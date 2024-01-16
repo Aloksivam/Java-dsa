@@ -10,7 +10,5 @@ public class fibonacci {
         }
         else
             return fibtilln(n-1)+fibtilln(n-2);
-
-
     }
 }
