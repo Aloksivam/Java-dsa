@@ -73,7 +73,7 @@ public class ArrayListExample {
 //		list.add(12);
 //		list.add(13);
 //		list.add(14);
-//		main.add(list);
+//		main.add(list)<;
 //		list1.add(67);
 //		list1.add(68);
 //		list1.add(97);
