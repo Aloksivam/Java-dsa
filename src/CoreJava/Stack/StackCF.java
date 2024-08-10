@@ -56,6 +56,36 @@ public class StackCF {
 	}
 		
 		}
+	
+	public static String superReducedString(String s) {
+		// Write your code here
+		// String result="";
+		Stack<Character> st = new Stack<>();
+		int i=0;
+		while(i<s.length()){
+			if((!st.isEmpty()) && st.peek()==s.charAt(i)){
+				st.pop();
+			}
+			else{
+				st.push(s.charAt(i));
+			}
+			i++;
+		}
+		String res="";
+		if(st.isEmpty()){
+			return "Empty String";
+		}
+		//will make string starting from bottom
+		for(char j:st){
+			res+=(j+"");
+			System.out.println(res);
+		}
+		//will make String starting from top
+		while(!st.isEmpty()){
+			res+=(st.pop()+"");
+		}
+		return res;
+	}
 		public static void Nextgt(int[] arr,int[] ngt){
 			Stack<Integer> s = new Stack<>();
 			for (int i = arr.length-1; i >=0 ; i--) {
@@ -164,8 +194,8 @@ public class StackCF {
 	}
 		public static void main(String[] args) {
 		Stack<Integer> s = new Stack<>();
-		
-		
+			
+			System.out.println(superReducedString("eaabccbd"));
 //		s.push(1);
 //		s.push(2);
 //		s.push(3);
