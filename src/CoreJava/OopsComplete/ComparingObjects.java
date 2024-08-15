@@ -11,16 +11,29 @@ public class ComparingObjects {
 		System.out.println(st2);
 		//calling out constructor without any argument
 		Student st3 = new Student();
+		Student st4 = new Student();
 		System.out.println(st3.name);
 		System.out.println(st3.rollno);
+		System.out.println(Student.population);
+		new ComparingObjects().fun();
+	}
+	 void fun(){
+//		ComparingObjects cm = new ComparingObjects();
+//		cm.greeting();
+		 greeting();
+	}
+	static void greeting(){
+		System.out.println("good morning");
 	}
 }
 class Student{
 	String name;
+	static int population=0;
 	int rollno;
 	
 	public Student() {
 		this("alok",14);
+		Student.population++;
 	}
 	
 	public Student(Student other){
