@@ -5,6 +5,9 @@ public class ComparingObjects {
 		System.out.println("hello");
 		Student st = new Student("alok",13);
 		Student st2 = new Student(st);
+		Student st33 = st;
+		st33.name="shivam";
+		System.out.println(st.name);
 		System.out.println(st2);
 		//calling out constructor without any argument
 		Student st3 = new Student();
